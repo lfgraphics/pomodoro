@@ -1,0 +1,85 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    margin: 0;
+    background: #f0f2f5;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls button,
+.time-input button,
+.actions button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    transition: background 0.3s;
+}
+
+.controls button:hover,
+.time-input button,
+.actions button:hover {
+    background: #45a049;
+}
+
+.time-input {
+    margin: 20px 0;
+}
+
+input[type="number"] {
+    padding: 10px;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.display {
+    position: relative;
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+}
+
+.progress-ring__circle {
+    stroke: #4CAF50;
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.start-time {
+    color: #666;
+    margin: 10px 0;
+    font-size: 0.9em;
+}

@@ -1,0 +1,67 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords"
+    content="productivity timer, Pomodoro timer, 20-20-20 rule, work interval timer, break timer, online stopwatch, task timer, study timer, focus timer, time management tool">
+    <meta name="author" content="Taha Kazmi">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Smart Productivity Timer - 20/20/20 Rule Pomodoro & Stopwatch">
+    <meta property="og:description"
+    content="Free web-based timer with Pomodoro technique, visual progress ring, and browser notifications. Perfect for work/study sessions.">
+    <meta property="og:image" content="./media/images/preview.png">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Smart Productivity Timer - 20/20/20 Rule Pomodoro & Stopwatch">
+    <meta name="twitter:description"
+    content="Free web-based timer with Pomodoro technique, visual progress ring, and browser notifications. Perfect for work/study sessions.">
+    <meta name="twitter:image" content="./media/images/preview.png">
+    
+    <!-- Mobile optimization -->
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Timer & Pomodoro</title>
+    <meta name="description" content="Smart Productivity Timer with 20-20-20 Rule Pomodoro, Stopwatch, and Custom Alarms. Track work/break intervals with visual progress and browser notifications. Works offline and across devices.">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/fluency/48/timer.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Timer ⏱️</h1>
+        <div id="info"></div>
+        <div class="controls">
+            <button onclick="setDuration(1200)">Work (20m)</button>
+            <button onclick="setDuration(20)">Break (20s)</button>
+            <button onclick="setDuration(300)">Short Break (5m)</button>
+            <button onclick="setDuration(900)">Long Break (15m)</button>
+        </div>
+
+        <div class="time-input">
+            <input type="number" id="customMinutes" placeholder="Minutes" min="0">
+            <input type="number" id="customSeconds" placeholder="Seconds" min="0" max="59">
+            <button onclick="setCustomDuration()">Set Custom Time</button>
+        </div>
+        <div id="startTime" class="start-time"></div>
+
+        <div class="display">
+            <svg class="progress-ring" width="300" height="300">
+                <circle class="progress-ring__circle" stroke-width="4" fill="transparent" r="145" cx="150" cy="150"/>
+            </svg>
+            <div class="time" id="time">00:00</div>
+        </div>
+
+        <div class="actions">
+            <button onclick="startTimer()" id="startBtn">Start</button>
+            <button onclick="pauseTimer()" id="pauseBtn">Pause</button>
+            <button onclick="stopTimer()" id="stopBtn">Stop</button>
+        </div>
+
+        <audio id="alarm" src="data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4LjMyLjEwNAAAAAAAAAAAAAAA//tQxAADB8AhSmxhIIEVCSiJrDCQBTbu3UrAIwUdkRgQbFAZC1iASDQA0O0hUZk+1sR2lZBEAMGA8OB2MAiM3STVMPPzvIO86Ro2KiVBuFBRpQ8FRCQRo8D//sQxBsAAANIAAAAAEmiJaTEFNRTMuMTAwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//sQxCIAAANIAAAAAEqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
