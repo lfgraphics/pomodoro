@@ -1,0 +1,20 @@
+{
+    "name": "Productivity Timer",
+    "short_name": "Timer",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#4CAF50",
+    "theme_color": "#4CAF50",
+    "icons": [
+        {
+            "src": "./media/images/android-chrome-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./media/images/android-chrome-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
