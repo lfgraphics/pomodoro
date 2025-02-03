@@ -108,7 +108,7 @@ function startTimer() {
                 updateDisplay(currentDuration - elapsedTime);
             }
         }, 1000);
-        showInfo(isPomodoro ?? `Pomodoro ${pomodoroSettings.phase} phase started`);
+        showInfo(isPomodoro ? `Pomodoro ${pomodoroSettings.phase} phase started` : "Timer Started");
     }
 }
 
@@ -126,12 +126,7 @@ function stopTimer() {
 
 function playAlarm() {
     alarm.play();
-    if (Notification.permission === 'granted') {
-        new Notification('Timer Completed!', {
-            body: `Your ${formatSeconds(currentDuration)} timer has finished!`,
-            icon: 'https://img.icons8.com/fluency/48/timer.png'
-        });
-    }
+    showInfo(`Your ${formatSeconds(currentDuration)} timer has finished!`)
 }
 
 function showNotification(message) {
@@ -165,6 +160,7 @@ function autoSwitchPomodoro() {
 // Initialize notifications
 if ('Notification' in window) {
     Notification.requestPermission();
+    showInfo(Notification.permission);
 }
 
 // Handle background operation
